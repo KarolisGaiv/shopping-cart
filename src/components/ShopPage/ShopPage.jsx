@@ -26,6 +26,7 @@ function ShopPage() {
             name={game.title}
             price={game.salePrice}
             key={game.steamAppID}
+            image={game.thumb}
           />
         );
       })}
