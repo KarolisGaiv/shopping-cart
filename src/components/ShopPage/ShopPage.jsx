@@ -1,5 +1,36 @@
+import { useState, useEffect } from 'react';
+import Card from '../Card/Card';
+
 function ShopPage() {
-  return <div>Shop Page</div>;
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const response = await fetch(
+      'https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15'
+    );
+    const data = await response.json();
+    setGames(data);
+    console.log(data);
+  };
+
+  return (
+    <div className='product-wrapper'>
+      {console.log(games)}
+      {games.map((game) => {
+        return (
+          <Card
+            name={game.title}
+            price={game.salePrice}
+            key={game.steamAppID}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 export default ShopPage;

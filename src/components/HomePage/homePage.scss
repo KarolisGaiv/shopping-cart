@@ -1,8 +1,9 @@
 @import '../../styles/base/base';
 
+// https://www.webfx.com/blog/web-design/responsive-background-image/
 .content {
   height: 100vh;
-  background-image: url('../assets/background-large.jpg');
+  background-image: url('../../assets/background-large.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   /* Background image is fixed in the viewport so that it doesn’t move when
