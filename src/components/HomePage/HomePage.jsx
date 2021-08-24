@@ -1,5 +1,7 @@
+import './homePage.scss';
+
 function HomePage() {
-  return <div>Home Page</div>;
+  return <div className='content'></div>;
 }
 
 export default HomePage;
