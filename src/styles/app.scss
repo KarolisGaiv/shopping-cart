@@ -1,2 +1,6 @@
 @import './mixins/mixins';
 @import './base/base';
+
+body {
+  background-color: $satin-linen;
+}

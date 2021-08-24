@@ -2,6 +2,7 @@ import Nav from './components/Nav/Nav';
 import HomePage from './components/HomePage/HomePage';
 import ShopPage from './components/ShopPage/ShopPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './styles/app.scss';
 
 function App() {
   return (
