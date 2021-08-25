@@ -1,6 +1,10 @@
 @import './mixins/mixins';
 @import './base/base';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $satin-linen;
   margin: 0 auto;
