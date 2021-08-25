@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Card from '../Card/Card';
+import './shopPage.scss';
 
 function ShopPage() {
   const [games, setGames] = useState([]);
@@ -18,7 +19,7 @@ function ShopPage() {
   };
 
   return (
-    <div className='product-wrapper'>
+    <div className='shop-wrapper'>
       {console.log(games)}
       {games.map((game) => {
         return (
