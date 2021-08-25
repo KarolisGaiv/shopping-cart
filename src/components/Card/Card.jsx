@@ -1,11 +1,17 @@
 import './card.scss';
 
-function Card({ name, price, image }) {
+function Card({ name, regularPrice, salePrice, image }) {
   return (
     <div className='card'>
-      <h1 className='card --name'>{name}</h1>
-      <h3 className='card --price'>{price}</h3>
-      <img src={image} alt='' />
+      <div className='card --picture'>
+        <img src={image} alt='' />
+      </div>
+      <div className='card --details'>
+        <h2 className='card --name'>{name}</h2>
+        <h3 className='card'>{regularPrice}</h3>
+        <h1 className='card --price'>{salePrice}</h1>
+      </div>
+      <button>Add to Cart</button>
     </div>
   );
 }

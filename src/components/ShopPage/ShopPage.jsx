@@ -24,7 +24,8 @@ function ShopPage() {
         return (
           <Card
             name={game.title}
-            price={game.salePrice}
+            regularPrice={game.normalPrice}
+            salePrice={game.salePrice}
             key={game.steamAppID}
             image={game.thumb}
           />
