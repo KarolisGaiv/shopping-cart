@@ -20,7 +20,9 @@ function Card({ name, regularPrice, salePrice, image, setShoppingCart }) {
         <h3 className='card__regular-price'>{regularPrice}</h3>
         <h1 className='card__sale-price'>{salePrice}</h1>
       </div>
-      <button onClick={addProduct}>Add to Cart</button>
+      <button onClick={addProduct} className='card__button'>
+        Add to Cart
+      </button>
     </div>
   );
 }

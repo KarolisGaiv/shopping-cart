@@ -6,4 +6,13 @@
   text-align: center;
   border-radius: 5px;
   padding: 2em;
+
+  &__button {
+    background: $natural-gray;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 900;
+    padding: 1em;
+  }
 }
