@@ -1,4 +1,9 @@
+@import '../../styles/base/base';
+
 .card {
-  border: 1px solid black;
+  background: $akaroa;
+  border: 1px solid $natural-gray;
   text-align: center;
+  border-radius: 5px;
+  padding: 2em;
 }
