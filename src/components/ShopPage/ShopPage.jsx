@@ -4,6 +4,7 @@ import './shopPage.scss';
 
 function ShopPage() {
   const [games, setGames] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -15,12 +16,11 @@ function ShopPage() {
     );
     const data = await response.json();
     setGames(data);
-    console.log(data);
+    console.log(shoppingCart);
   };
 
   return (
     <div className='shop-wrapper'>
-      {console.log(games)}
       {games.map((game) => {
         return (
           <Card
@@ -29,9 +29,11 @@ function ShopPage() {
             salePrice={game.salePrice}
             key={game.steamAppID}
             image={game.thumb}
+            setShoppingCart={setShoppingCart}
           />
         );
       })}
+      {console.log(shoppingCart)}
     </div>
   );
 }

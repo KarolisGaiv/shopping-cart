@@ -1,6 +1,15 @@
 import './card.scss';
 
-function Card({ name, regularPrice, salePrice, image }) {
+function Card({ name, regularPrice, salePrice, image, setShoppingCart }) {
+  function addProduct() {
+    const gameToBuy = {
+      name,
+      salePrice,
+      quantity: 1,
+    };
+    setShoppingCart((prevItems) => [...prevItems, gameToBuy]);
+  }
+
   return (
     <div className='card'>
       <div className='card__picture'>
@@ -11,7 +20,7 @@ function Card({ name, regularPrice, salePrice, image }) {
         <h3 className='card__regular-price'>{regularPrice}</h3>
         <h1 className='card__sale-price'>{salePrice}</h1>
       </div>
-      <button>Add to Cart</button>
+      <button onClick={addProduct}>Add to Cart</button>
     </div>
   );
 }
