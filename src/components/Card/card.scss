@@ -1,5 +1,7 @@
 @import '../../styles/base/base';
 
+$_milano_red: #b51205;
+
 .card {
   align-items: center;
   background: $akaroa;
@@ -11,12 +13,21 @@
   text-align: center;
   padding: 2em;
 
+  &__sale-price {
+    color: $_milano_red;
+  }
+
   &__button {
-    background: $natural-gray;
+    background: $apricot;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
     font-size: 1em;
     font-weight: 900;
     padding: 1em;
+
+    &:hover {
+      background: $burnt-sienna;
+    }
   }
 }
