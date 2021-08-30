@@ -1,4 +1,7 @@
 @import '../../styles/base/base';
+@import '../../styles//mixins//mixins';
+
+$_main-color-transparent: #eae7dc99;
 
 .navigation {
   align-items: center;
@@ -21,6 +24,18 @@
     @media (max-width: $breakpoint-laptop) {
       width: 50%;
     }
+
+    @media (max-width: $breakpoint-phone) {
+      background-color: $_main-color-transparent;
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      @include flex-center;
+      flex-direction: column;
+      width: 40%;
+      transform: translateX(100%);
+    }
   }
 
   &.--link {
@@ -34,16 +49,25 @@
     &:hover {
       background-color: $akaroa;
     }
+
+    @media (max-width: $breakpoint-phone) {
+      opacity: 0;
+    }
   }
 
   &__mobile-nav {
     display: none;
+    cursor: pointer;
 
     & div {
       background-color: black;
       width: 25px;
       height: 3px;
       margin: 5px;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+      display: block;
     }
   }
 }
@@ -52,8 +76,6 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: $breakpoint-phone) {
-  body {
-    display: none;
-  }
-}
+// @media (max-width: $breakpoint-phone) {
+
+// }
