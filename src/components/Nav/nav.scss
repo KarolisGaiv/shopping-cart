@@ -22,6 +22,9 @@
   &.--link {
     border: 1px solid $natural-gray;
     color: black;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 3px;
     padding: 0.5em 2em;
 
     &:hover {
