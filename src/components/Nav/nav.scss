@@ -12,7 +12,7 @@ $_main-color-transparent: #eae7dc99;
   &__logo {
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 20px;
+    font-size: $size-20;
   }
 
   &__links-wrapper {
@@ -47,8 +47,9 @@ $_main-color-transparent: #eae7dc99;
   &__link {
     color: black;
     font-weight: bold;
-    font-size: 14px;
+    font-size: $size-14;
     letter-spacing: 3px;
+    padding: 1em;
 
     &:hover {
       background-color: $akaroa;
