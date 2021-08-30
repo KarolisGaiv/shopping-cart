@@ -16,7 +16,11 @@
     display: flex;
     justify-content: space-around;
     list-style: none;
-    width: 40%;
+    width: 30%;
+
+    @media (max-width: $breakpoint-laptop) {
+      width: 50%;
+    }
   }
 
   &.--link {
@@ -46,4 +50,10 @@
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: $breakpoint-phone) {
+  body {
+    display: none;
+  }
 }
