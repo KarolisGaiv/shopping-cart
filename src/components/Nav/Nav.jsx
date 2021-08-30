@@ -4,8 +4,8 @@ import './nav.scss';
 function Nav() {
   return (
     <nav className='navigation'>
-      <div className='logo'>
-        <h3>This will be logo</h3>
+      <div className='navigation__logo'>
+        <h3>Game Shop</h3>
       </div>
       <ul className='navigation --links-wrapper'>
         <Link to='/'>
@@ -14,9 +14,22 @@ function Nav() {
         <Link to='/shop'>
           <li className='navigation --link'>Shop</li>
         </Link>
+        <Link to='/cart'>
+          <li className='navigation --link'>Cart</li>
+        </Link>
       </ul>
     </nav>
   );
 }
 
 export default Nav;
+
+/*
+https://www.youtube.com/watch?v=gXkqy0b4M5g
+!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!
+*/

@@ -4,16 +4,24 @@
   align-items: center;
   display: flex;
   justify-content: space-around;
+  min-height: 8vh;
+
+  &__logo {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+  }
 
   &.--links-wrapper {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    width: 50%;
+    width: 40%;
   }
 
   &.--link {
     border: 1px solid $natural-gray;
+    color: black;
     padding: 0.5em 2em;
 
     &:hover {
