@@ -1,6 +1,8 @@
+import './cart.scss';
+
 function Cart({ cart }) {
   return (
-    <div>
+    <div className='cart-wrapper'>
       <h1>Games to Buy: {cart.length} </h1>
       <div className='cart-content'>
         {console.log(cart)}
