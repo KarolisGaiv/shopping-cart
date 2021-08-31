@@ -25,7 +25,7 @@ function ProductCard({ name, price, quantity }) {
   return (
     <div className='product-card'>
       <div className='product-card__name'>{name}</div>
-      <div className='product-card__price'>{price}</div>
+      <div className='product-card__price'>$ {price}</div>
       <div className='product-car__quantity'>{quantity}</div>
     </div>
   );

@@ -2,6 +2,8 @@
 @import '../../styles/mixins//mixins';
 
 .cart-wrapper {
-  margin-top: 5%;
+  border: 2px solid $natural-gray;
+  margin: 2rem 1rem;
   text-align: center;
+  padding: 1rem;
 }
