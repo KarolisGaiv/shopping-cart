@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import Card from '../Card/Card';
 import './shopPage.scss';
 
-function ShopPage() {
+function ShopPage({ addProduct }) {
   const [games, setGames] = useState([]);
-  const [shoppingCart, setShoppingCart] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -16,7 +15,6 @@ function ShopPage() {
     );
     const data = await response.json();
     setGames(data);
-    console.log(shoppingCart);
   };
 
   return (
@@ -29,11 +27,10 @@ function ShopPage() {
             salePrice={game.salePrice}
             key={game.steamAppID}
             image={game.thumb}
-            setShoppingCart={setShoppingCart}
+            handleClick={addProduct}
           />
         );
       })}
-      {console.log(shoppingCart)}
     </div>
   );
 }

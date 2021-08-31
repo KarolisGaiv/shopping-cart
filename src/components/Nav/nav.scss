@@ -39,7 +39,7 @@ $_main-color-transparent: #eae7dc99;
     }
 
     &.--active {
-      justify-content: space-around;
+      justify-content: space-evenly;
       transform: translateX(0%);
     }
   }

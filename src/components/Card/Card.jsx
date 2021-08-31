@@ -1,13 +1,14 @@
 import './card.scss';
 
-function Card({ name, regularPrice, salePrice, image, setShoppingCart }) {
+function Card({ name, regularPrice, salePrice, image, handleClick }) {
   function addProduct() {
     const gameToBuy = {
       name,
       salePrice,
       quantity: 1,
     };
-    setShoppingCart((prevItems) => [...prevItems, gameToBuy]);
+    // pass game object up to parent App.js component state
+    handleClick(gameToBuy);
   }
 
   return (
