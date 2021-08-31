@@ -16,6 +16,7 @@ $_main-color-transparent: #eae7dc99;
 
     & a {
       color: black;
+      text-decoration: none;
     }
   }
 
@@ -45,6 +46,14 @@ $_main-color-transparent: #eae7dc99;
     &.--active {
       justify-content: space-evenly;
       transform: translateX(0%);
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        background-color: $akaroa;
+      }
     }
   }
 
@@ -87,14 +96,6 @@ $_main-color-transparent: #eae7dc99;
     &.--toggle .line3 {
       transform: rotate(45deg) translate(-5px, -6px);
     }
-  }
-}
-
-a {
-  text-decoration: none;
-
-  &:hover {
-    background-color: $akaroa;
   }
 }
 

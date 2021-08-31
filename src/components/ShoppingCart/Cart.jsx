@@ -1,22 +1,34 @@
 import './cart.scss';
+import { Link } from 'react-router-dom';
 
 function Cart({ cart }) {
   return (
-    <div className='cart-wrapper'>
-      <h1 className='cart-wrapper__header'>Games to Buy: {cart.length} </h1>
-      <div className='cart-content'>
-        {console.log(cart)}
-        {cart.map((game, index) => {
-          return (
-            <ProductCard
-              name={game.name}
-              price={game.salePrice}
-              quantity={game.quantity}
-              key={index}
-            />
-          );
-        })}
-      </div>
+    <div>
+      {cart.length < 1 ? (
+        <div className='warning-message'>
+          Your Cart Is Empty
+          <Link to='/shop' className='warning-message__link'>
+            <button className='warning-message__shop-btn'>Visit Shop</button>
+          </Link>
+        </div>
+      ) : (
+        <div className='cart-wrapper'>
+          <h1 className='cart-wrapper__header'>Games to Buy: {cart.length} </h1>
+          <div className='cart-content'>
+            {console.log(cart)}
+            {cart.map((game, index) => {
+              return (
+                <ProductCard
+                  name={game.name}
+                  price={game.salePrice}
+                  quantity={game.quantity}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
