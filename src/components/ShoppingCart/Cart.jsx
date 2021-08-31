@@ -3,7 +3,7 @@ import './cart.scss';
 function Cart({ cart }) {
   return (
     <div className='cart-wrapper'>
-      <h1>Games to Buy: {cart.length} </h1>
+      <h1 className='cart-wrapper__header'>Games to Buy: {cart.length} </h1>
       <div className='cart-content'>
         {console.log(cart)}
         {cart.map((game, index) => {
