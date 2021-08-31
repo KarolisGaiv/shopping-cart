@@ -33,15 +33,15 @@ $_milano_red: #b51205;
   }
 
   &__name {
-    // align-items: center;
     display: flex;
     flex-direction: column;
     text-align: center;
     min-height: 7rem;
     max-height: 10rem;
+    padding-top: 10%;
   }
 
   &__regular-price {
-    margin: 1em 0;
+    margin-top: 1em;
   }
 }
