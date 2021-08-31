@@ -24,7 +24,7 @@ function App() {
             path='/shop'
             render={() => <ShopPage addProduct={addProduct} />}
           />
-          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/cart' render={() => <Cart cart={cart} />} />
         </Switch>
       </div>
       {console.log(cart)}

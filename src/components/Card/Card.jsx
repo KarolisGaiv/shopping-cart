@@ -14,7 +14,7 @@ function Card({ name, regularPrice, salePrice, image, handleClick }) {
   return (
     <div className='card'>
       <div className='card__picture'>
-        <img src={image} alt='' />
+        <img src={image} alt='game banner' />
       </div>
       <div className='card__details'>
         <h2 className='card__name'>{name}</h2>
