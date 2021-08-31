@@ -104,3 +104,16 @@ a {
     transform: translateX(0px);
   }
 }
+
+.counter-wrapper {
+  align-items: center;
+  display: flex;
+
+  &__counter {
+    background: $burnt-sienna;
+    border-radius: 50%;
+    font-weight: 600;
+    text-align: center;
+    width: 4vh;
+  }
+}

@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Nav />
+        <Nav cart={cart} />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route

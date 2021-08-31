@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './nav.scss';
 
-function Nav() {
+function Nav({ cart }) {
   useEffect(() => {
     navSlide();
   }, []);
@@ -46,8 +46,11 @@ function Nav() {
         <Link to='/shop'>
           <li className='navigation__link'>Shop</li>
         </Link>
-        <Link to='/cart'>
+        <Link to='/cart' className='counter-wrapper'>
           <li className='navigation__link'>Cart</li>
+          {cart.length > 0 ? (
+            <div className='counter-wrapper__counter'>{cart.length}</div>
+          ) : null}
         </Link>
       </ul>
       <div className='navigation__mobile-nav'>
