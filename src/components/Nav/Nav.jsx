@@ -37,7 +37,9 @@ function Nav({ cart }) {
   return (
     <nav className='navigation'>
       <div className='navigation__logo'>
-        <h3>Game Shop</h3>
+        <Link to='/'>
+          <h3>Game Shop</h3>
+        </Link>
       </div>
       <ul className='navigation__links-wrapper'>
         <Link to='/'>

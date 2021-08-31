@@ -13,6 +13,10 @@ $_main-color-transparent: #eae7dc99;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: $size-20;
+
+    & a {
+      color: black;
+    }
   }
 
   &__links-wrapper {
@@ -112,6 +116,7 @@ a {
   &__counter {
     background: $burnt-sienna;
     border-radius: 50%;
+    color: black;
     font-weight: 600;
     text-align: center;
     margin: 0 5px;
