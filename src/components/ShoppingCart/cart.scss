@@ -44,3 +44,8 @@ $_mongoose: #b59a74;
   display: flex;
   flex-direction: column;
 }
+
+.product-card {
+  border: 1px solid $natural-gray;
+  margin: 1em 0;
+}
