@@ -15,7 +15,6 @@ function Cart({ cart }) {
         <div className='cart-wrapper'>
           <h1 className='cart-wrapper__header'>Games to Buy: {cart.length} </h1>
           <div className='cart-content'>
-            {console.log(cart)}
             {cart.map((game, index) => {
               return (
                 <ProductCard
@@ -23,6 +22,7 @@ function Cart({ cart }) {
                   price={game.salePrice}
                   quantity={game.quantity}
                   key={index}
+                  image={game.image}
                 />
               );
             })}
@@ -33,9 +33,12 @@ function Cart({ cart }) {
   );
 }
 
-function ProductCard({ name, price, quantity }) {
+function ProductCard({ name, price, quantity, image }) {
   return (
     <div className='product-card'>
+      <div className='product-card__image'>
+        <img src={image} alt='' />
+      </div>
       <div className='product-card__name'>{name}</div>
       <div className='product-card__price'>$ {price}</div>
       <div className='product-car__quantity'>{quantity}</div>

@@ -6,6 +6,7 @@ function Card({ name, regularPrice, salePrice, image, handleClick }) {
       name,
       salePrice,
       quantity: 1,
+      image,
     };
     // pass game object up to parent App.js component state
     handleClick(gameToBuy);

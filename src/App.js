@@ -27,7 +27,6 @@ function App() {
           <Route exact path='/cart' render={() => <Cart cart={cart} />} />
         </Switch>
       </div>
-      {console.log(cart)}
     </Router>
   );
 }
