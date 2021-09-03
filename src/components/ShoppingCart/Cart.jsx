@@ -1,7 +1,23 @@
+import { useEffect, useState } from 'react';
 import './cart.scss';
 import { Link } from 'react-router-dom';
 
 function Cart({ cart }) {
+  const [totalPrice, setTotalPrice] = useState('');
+
+  useEffect(() => {
+    let totalAmount = calculateTotal();
+    setTotalPrice(totalAmount);
+  }, [cart]);
+
+  function calculateTotal() {
+    let total = 0;
+    cart.forEach((game) => {
+      total = Math.round((total + game.salePrice * game.quantity) * 100) / 100;
+    });
+    return total;
+  }
+
   return (
     <div>
       {cart.length < 1 ? (
@@ -32,8 +48,10 @@ function Cart({ cart }) {
             </div>
           </div>
           <div className='order-info'>
-            <div className='order-info__total-price'>Total Price: </div>
-            <button className='order-info__purchase-btn'>Purchase</button>
+            <div className='order-info__total-price'>
+              Total Price: {totalPrice}
+            </div>
+            <button className='order-info__purchase-btn'>Buy</button>
           </div>
         </div>
       )}
