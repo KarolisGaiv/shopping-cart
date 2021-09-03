@@ -12,20 +12,28 @@ function Cart({ cart }) {
           </Link>
         </div>
       ) : (
-        <div className='cart-wrapper'>
-          <h1 className='cart-wrapper__header'>Games to Buy: {cart.length} </h1>
-          <div className='cart-content'>
-            {cart.map((game, index) => {
-              return (
-                <ProductCard
-                  name={game.name}
-                  price={game.salePrice}
-                  quantity={game.quantity}
-                  key={index}
-                  image={game.image}
-                />
-              );
-            })}
+        <div>
+          <div className='cart-wrapper'>
+            <h1 className='cart-wrapper__header'>
+              Games to Buy: {cart.length}{' '}
+            </h1>
+            <div className='cart-wrapper__content'>
+              {cart.map((game, index) => {
+                return (
+                  <ProductCard
+                    name={game.name}
+                    price={game.salePrice}
+                    quantity={game.quantity}
+                    key={index}
+                    image={game.image}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className='order-info'>
+            <div className='order-info__total-price'>Total Price: </div>
+            <button className='order-info__purchase-btn'>Purchase</button>
           </div>
         </div>
       )}

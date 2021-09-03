@@ -38,11 +38,11 @@ $_mongoose: #b59a74;
     color: $burnt-sienna;
     margin-bottom: 1em;
   }
-}
 
-.cart-content {
-  display: flex;
-  flex-direction: column;
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .product-card {
