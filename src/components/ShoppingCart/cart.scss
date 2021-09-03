@@ -52,4 +52,17 @@ $_mongoose: #b59a74;
 .product-card {
   border: 1px solid $natural-gray;
   margin: 1em 0;
+  @include flex-space-around;
+
+  &__price {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__quantity {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }

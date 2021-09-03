@@ -75,8 +75,14 @@ function ProductCard({ name, price, quantity, image }) {
         <img src={image} alt='' />
       </div>
       <div className='product-card__name'>{name}</div>
-      <div className='product-card__price'>$ {price}</div>
-      <div className='product-car__quantity'>{quantity}</div>
+      <div className='product-card__price'>
+        <span>Price</span>
+        <span>$ {price}</span>
+      </div>
+      <div className='product-card__quantity'>
+        <span>Quantity</span>
+        <span>{quantity}</span>
+      </div>
     </div>
   );
 }
