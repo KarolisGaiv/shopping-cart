@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import './cart.scss';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-function Cart({ cart }) {
+function Cart({ cart, setCart }) {
+  let history = useHistory();
   const [totalPrice, setTotalPrice] = useState('');
 
   useEffect(() => {
@@ -16,6 +17,12 @@ function Cart({ cart }) {
       total = Math.round((total + game.salePrice * game.quantity) * 100) / 100;
     });
     return total;
+  }
+
+  function resetCart() {
+    setCart([]);
+    alert('You purchase was successful. Thanks for choosing us!');
+    history.push('/');
   }
 
   return (
@@ -51,7 +58,9 @@ function Cart({ cart }) {
             <div className='order-info__total-price'>
               Total Price: {totalPrice}
             </div>
-            <button className='order-info__purchase-btn'>Buy</button>
+            <button className='order-info__purchase-btn' onClick={resetCart}>
+              Buy
+            </button>
           </div>
         </div>
       )}

@@ -26,6 +26,10 @@ $_mongoose: #b59a74;
       background: $_mongoose;
     }
   }
+
+  &__link {
+    cursor: unset;
+  }
 }
 
 .cart-wrapper {
