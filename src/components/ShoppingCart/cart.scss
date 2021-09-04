@@ -50,9 +50,20 @@ $_mongoose: #b59a74;
 }
 
 .product-card {
-  border: 1px solid $natural-gray;
-  margin: 1em 0;
   @include flex-space-around;
+  border: 1px solid $natural-gray;
+  font-size: $size-20;
+  margin: 1em 0;
+  padding: 2rem 0;
+  max-width: 800px;
+
+  & > * {
+    @include margin-sides(1em);
+  }
+
+  &__name {
+    width: 300px;
+  }
 
   &__price {
     align-items: flex-end;

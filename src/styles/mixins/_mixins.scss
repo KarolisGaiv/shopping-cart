@@ -9,3 +9,7 @@
   display: flex;
   justify-content: space-around;
 }
+
+@mixin margin-sides($sides_margin) {
+  margin: 0 $sides_margin;
+}
