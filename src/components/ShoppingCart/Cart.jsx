@@ -49,6 +49,8 @@ function Cart({ cart, setCart }) {
                     quantity={game.quantity}
                     key={index}
                     image={game.image}
+                    cart={cart}
+                    setCart={setCart}
                   />
                 );
               })}
@@ -68,7 +70,24 @@ function Cart({ cart, setCart }) {
   );
 }
 
-function ProductCard({ name, price, quantity, image }) {
+function ProductCard({ name, price, quantity, image, cart, setCart }) {
+  const [count, setCount] = useState(1);
+
+  function incrementQuantity() {
+    const gameIndex = cart.findIndex((game) => game.name === name);
+    let newQuantity = count + 1;
+    setCount(newQuantity);
+    // copy original array of games
+    let gameCart = [...cart];
+    // copy targeted game item
+    let targetGame = { ...gameCart[gameIndex] };
+    // update targeted game quanitity
+    targetGame.quantity = count;
+    // replace updated game
+    gameCart[gameIndex] = targetGame;
+    setCart(gameCart);
+  }
+
   return (
     <div className='product-card'>
       <div className='product-card__image'>
@@ -82,7 +101,13 @@ function ProductCard({ name, price, quantity, image }) {
       <div className='product-card__quantity'>
         <span>Quantity</span>
         <div className='product-card__quantity__button-wrapper'>
-          <button className='product-card__quantity__btn'>+</button>
+          <button
+            onClick={incrementQuantity}
+            className='product-card__quantity__btn'
+            id={name}
+          >
+            +
+          </button>
           <span>{quantity}</span>
           <button className='product-card__quantity__btn'>-</button>
         </div>
