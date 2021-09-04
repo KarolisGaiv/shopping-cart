@@ -88,6 +88,21 @@ function ProductCard({ name, price, quantity, image, cart, setCart }) {
     setCart(gameCart);
   }
 
+  function decrementQuantity() {
+    const gameIndex = cart.findIndex((game) => game.name === name);
+    let newQuantity = count - 1;
+    setCount(newQuantity);
+    // copy original array of games
+    let gameCart = [...cart];
+    // copy targeted game item
+    let targetGame = { ...gameCart[gameIndex] };
+    // update targeted game quanitity
+    targetGame.quantity = count;
+    // replace updated game
+    gameCart[gameIndex] = targetGame;
+    setCart(gameCart);
+  }
+
   return (
     <div className='product-card'>
       <div className='product-card__image'>
@@ -104,12 +119,17 @@ function ProductCard({ name, price, quantity, image, cart, setCart }) {
           <button
             onClick={incrementQuantity}
             className='product-card__quantity__btn'
-            id={name}
           >
             +
           </button>
           <span>{quantity}</span>
-          <button className='product-card__quantity__btn'>-</button>
+          <button
+            className='product-card__quantity__btn'
+            id={name}
+            onClick={decrementQuantity}
+          >
+            -
+          </button>
         </div>
       </div>
     </div>
