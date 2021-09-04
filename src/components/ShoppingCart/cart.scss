@@ -64,5 +64,9 @@ $_mongoose: #b59a74;
     align-items: center;
     display: flex;
     flex-direction: column;
+
+    &__btn {
+      width: 30px;
+    }
   }
 }

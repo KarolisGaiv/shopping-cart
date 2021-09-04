@@ -81,7 +81,11 @@ function ProductCard({ name, price, quantity, image }) {
       </div>
       <div className='product-card__quantity'>
         <span>Quantity</span>
-        <span>{quantity}</span>
+        <div className='product-card__quantity__button-wrapper'>
+          <button className='product-card__quantity__btn'>+</button>
+          <span>{quantity}</span>
+          <button className='product-card__quantity__btn'>-</button>
+        </div>
       </div>
     </div>
   );
