@@ -34,6 +34,14 @@ function Nav({ cart }) {
     });
   }
 
+  function calcCartSize() {
+    let counter = 0;
+    cart.forEach((game) => {
+      counter = counter + game.quantity;
+    });
+    return counter;
+  }
+
   return (
     <nav className='navigation'>
       <div className='navigation__logo'>
@@ -51,7 +59,7 @@ function Nav({ cart }) {
         <Link to='/cart' className='counter-wrapper'>
           <li className='navigation__link'>Cart</li>
           {cart.length > 0 ? (
-            <div className='counter-wrapper__counter'>{cart.length}</div>
+            <div className='counter-wrapper__counter'>{calcCartSize()}</div>
           ) : null}
         </Link>
       </ul>
