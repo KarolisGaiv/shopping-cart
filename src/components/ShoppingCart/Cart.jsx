@@ -7,16 +7,24 @@ function Cart({ cart, setCart }) {
   const [totalPrice, setTotalPrice] = useState('');
 
   useEffect(() => {
-    let totalAmount = calculateTotal();
+    let totalAmount = calcTotalAmount();
     setTotalPrice(totalAmount);
   }, [cart]);
 
-  function calculateTotal() {
+  function calcTotalAmount() {
     let total = 0;
     cart.forEach((game) => {
       total = Math.round((total + game.salePrice * game.quantity) * 100) / 100;
     });
     return total;
+  }
+
+  function calcCartSize() {
+    let counter = 0;
+    cart.forEach((game) => {
+      counter = counter + game.quantity;
+    });
+    return counter;
   }
 
   function resetCart() {
@@ -38,7 +46,7 @@ function Cart({ cart, setCart }) {
         <div>
           <div className='cart-wrapper'>
             <h1 className='cart-wrapper__header'>
-              Games to Buy: {cart.length}{' '}
+              Games to Buy: {calcCartSize()}{' '}
             </h1>
             <div className='cart-wrapper__content'>
               {cart.map((game, index) => {
@@ -46,7 +54,6 @@ function Cart({ cart, setCart }) {
                   <ProductCard
                     name={game.name}
                     price={game.salePrice}
-                    quantity={game.quantity}
                     key={index}
                     image={game.image}
                     cart={cart}
@@ -70,7 +77,7 @@ function Cart({ cart, setCart }) {
   );
 }
 
-function ProductCard({ name, price, quantity, image, cart, setCart }) {
+function ProductCard({ name, price, image, cart, setCart }) {
   const [count, setCount] = useState(1);
 
   function incrementQuantity() {
@@ -122,7 +129,7 @@ function ProductCard({ name, price, quantity, image, cart, setCart }) {
           >
             +
           </button>
-          <span>{quantity}</span>
+          <span>{count}</span>
           <button
             className='product-card__quantity__btn'
             id={name}
