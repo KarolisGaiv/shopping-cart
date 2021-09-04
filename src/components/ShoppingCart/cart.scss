@@ -32,7 +32,13 @@ $_mongoose: #b59a74;
   }
 }
 
+.cart-page {
+  display: flex;
+  flex-direction: column;
+}
+
 .cart-wrapper {
+  align-self: center;
   border: 2px solid $natural-gray;
   margin: 2rem 1rem;
   text-align: center;
@@ -51,6 +57,7 @@ $_mongoose: #b59a74;
 
 .product-card {
   @include flex-space-around;
+  align-self: center;
   border: 1px solid $natural-gray;
   font-size: $size-20;
   margin: 1em 0;
@@ -75,9 +82,24 @@ $_mongoose: #b59a74;
     align-items: center;
     display: flex;
     flex-direction: column;
+    width: 7rem;
+
+    &__button-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+    }
 
     &__btn {
+      background: $akaroa;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
       width: 30px;
+
+      &:hover {
+        background: $_mongoose;
+      }
     }
   }
 }

@@ -43,7 +43,7 @@ function Cart({ cart, setCart }) {
           </Link>
         </div>
       ) : (
-        <div>
+        <div className='cart-page'>
           <div className='cart-wrapper'>
             <h1 className='cart-wrapper__header'>
               Games to Buy: {calcCartSize()}{' '}
