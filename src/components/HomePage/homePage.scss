@@ -15,6 +15,10 @@ the content’s height is greater than the image’s height */
 on the container’s size */
   background-size: cover;
   background-color: $satin-linen;
+
+  @media (max-width: $breakpoint-phone) {
+    height: 100vh;
+  }
 }
 
 .page-intro {
@@ -25,8 +29,25 @@ on the container’s size */
   position: relative;
   top: 20%;
 
+  @media (max-width: $breakpoint-phone) {
+    top: 0%;
+  }
+
+  @media (max-width: $breakpoint-laptop) {
+    top: 0%;
+  }
+
   &__header {
     font-size: 45px;
+    max-width: 250px;
+
+    @media (max-width: $breakpoint-phone) {
+      max-width: 100%;
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+      max-width: 100%;
+    }
   }
 
   &__shop-btn {
