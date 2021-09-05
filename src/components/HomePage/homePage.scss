@@ -1,6 +1,6 @@
 @import '../../styles/base/base';
 
-.content {
+.home-wrapper {
   height: 92vh;
   background-image: url('../../assets/background-large.jpg');
   background-position: center center;
@@ -12,4 +12,17 @@ the content’s height is greater than the image’s height */
 on the container’s size */
   background-size: cover;
   background-color: $satin-linen;
+}
+
+.page-intro {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 2%;
+  position: relative;
+  top: 20%;
+
+  &__header {
+    font-size: 45px;
+  }
 }
