@@ -7,7 +7,7 @@ function HomePage() {
       <div className='page-intro'>
         <h1 className='page-intro__header'>Best Place For Games</h1>
         <Link to='/shop'>
-          <button>Shop Now</button>
+          <button className='page-intro__shop-btn'>Shop Now</button>
         </Link>
       </div>
     </div>
