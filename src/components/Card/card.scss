@@ -30,6 +30,10 @@ $_milano_red: #b51205;
     &:hover {
       background: $burnt-sienna;
     }
+
+    &:disabled {
+      background: #b7817a;
+    }
   }
 
   &__name {
