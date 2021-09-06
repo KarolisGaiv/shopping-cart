@@ -79,8 +79,6 @@ function Cart({ cart, setCart }) {
 }
 
 function ProductCard({ name, price, image, cart, setCart, quantity }) {
-  const [count, setCount] = useState(quantity);
-
   function incrementQuantity() {
     const gameIndex = cart.findIndex((game) => game.name === name);
     // copy original array of games
@@ -96,16 +94,14 @@ function ProductCard({ name, price, image, cart, setCart, quantity }) {
 
   function decrementQuantity() {
     const gameIndex = cart.findIndex((game) => game.name === name);
-    let newQuantity = count - 1;
-    setCount(newQuantity);
     // copy original array of games
     let gameCart = [...cart];
     // copy targeted game item
-    let targetGame = { ...gameCart[gameIndex] };
+    let gameToUpdate = { ...gameCart[gameIndex] };
     // update targeted game quanitity
-    targetGame.quantity = count;
+    gameToUpdate.quantity = gameToUpdate.quantity - 1;
     // replace updated game
-    gameCart[gameIndex] = targetGame;
+    gameCart[gameIndex] = gameToUpdate;
     setCart(gameCart);
   }
 
