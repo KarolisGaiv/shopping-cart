@@ -10,7 +10,6 @@ function Card({ name, regularPrice, salePrice, image, handleClick }) {
     };
     // pass game object up to parent App.js component state
     handleClick(gameToBuy);
-    console.log(e.target);
     e.target.innerHTML = 'Added';
     e.target.disabled = true;
   }
