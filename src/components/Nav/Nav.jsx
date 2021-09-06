@@ -39,6 +39,9 @@ function Nav({ cart }) {
     cart.forEach((game) => {
       counter = counter + game.quantity;
     });
+    if (counter === 0) {
+      return null;
+    }
     return counter;
   }
 

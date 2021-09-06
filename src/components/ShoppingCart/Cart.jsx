@@ -46,21 +46,25 @@ function Cart({ cart, setCart }) {
         <div className='cart-page'>
           <div className='cart-wrapper'>
             <h1 className='cart-wrapper__header'>
-              Games to Buy: {calcCartSize()}{' '}
+              Games to Buy: {calcCartSize()}
             </h1>
             <div className='cart-wrapper__content'>
               {cart.map((game, index) => {
-                return (
-                  <ProductCard
-                    name={game.name}
-                    price={game.salePrice}
-                    key={index}
-                    image={game.image}
-                    cart={cart}
-                    setCart={setCart}
-                    quantity={game.quantity}
-                  />
-                );
+                {
+                  if (game.quantity > 0) {
+                    return (
+                      <ProductCard
+                        name={game.name}
+                        price={game.salePrice}
+                        key={index}
+                        image={game.image}
+                        cart={cart}
+                        setCart={setCart}
+                        quantity={game.quantity}
+                      />
+                    );
+                  }
+                }
               })}
             </div>
           </div>
@@ -125,13 +129,15 @@ function ProductCard({ name, price, image, cart, setCart, quantity }) {
             +
           </button>
           <span>{quantity}</span>
-          <button
-            className='product-card__quantity__btn'
-            id={name}
-            onClick={decrementQuantity}
-          >
-            -
-          </button>
+          {quantity > 0 ? (
+            <button
+              className='product-card__quantity__btn'
+              id={name}
+              onClick={decrementQuantity}
+            >
+              -
+            </button>
+          ) : null}
         </div>
       </div>
     </div>
