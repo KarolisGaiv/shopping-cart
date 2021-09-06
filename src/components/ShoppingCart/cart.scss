@@ -89,6 +89,10 @@ $_mongoose: #b59a74;
   padding: 2rem 0;
   max-width: 800px;
 
+  @media (max-width: $breakpoint-phone) {
+    max-width: 500px;
+  }
+
   & > * {
     @include margin-sides(1em);
   }
