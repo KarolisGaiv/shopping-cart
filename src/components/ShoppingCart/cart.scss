@@ -33,6 +33,7 @@ $_mongoose: #b59a74;
 }
 
 .cart-page {
+  align-items: center;
   display: flex;
   flex-direction: column;
 }
@@ -52,6 +53,30 @@ $_mongoose: #b59a74;
   &__content {
     display: flex;
     flex-direction: column;
+  }
+}
+
+.order-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &__total-price {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &__purchase-btn {
+    background: $akaroa;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0.5em;
+    padding: 5px 30px;
+
+    &:hover {
+      background: $_mongoose;
+    }
   }
 }
 

@@ -104,6 +104,11 @@ function ProductCard({ name, price, image, cart, setCart, quantity }) {
     let gameToUpdate = { ...gameCart[gameIndex] };
     // update targeted game quanitity
     gameToUpdate.quantity = gameToUpdate.quantity - 1;
+    // {
+    //   if (gameToUpdate.quantity === 0) {
+    //     gameCart = gameCart.filter((game) => game.quantity !== 0);
+    //   }
+    // }
     // replace updated game
     gameCart[gameIndex] = gameToUpdate;
     setCart(gameCart);
