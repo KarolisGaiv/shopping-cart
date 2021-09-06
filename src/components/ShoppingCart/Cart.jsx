@@ -58,6 +58,7 @@ function Cart({ cart, setCart }) {
                     image={game.image}
                     cart={cart}
                     setCart={setCart}
+                    quantity={game.quantity}
                   />
                 );
               })}
@@ -77,22 +78,62 @@ function Cart({ cart, setCart }) {
   );
 }
 
-function ProductCard({ name, price, image, cart, setCart }) {
-  const [count, setCount] = useState(1);
+function ProductCard({ name, price, image, cart, setCart, quantity }) {
+  const [count, setCount] = useState(quantity);
 
   function incrementQuantity() {
+    // console.log(`count is pradziu ${count}`);
+    // const gameIndex = cart.findIndex((game) => game.name === name);
+    // let newQuantity = count;
+    // newQuantity += 1;
+    // console.log(`naujas quant turi but ${newQuantity}`);
+    // setCount(newQuantity);
+    // console.log(`count po update ${count}`);
+    // // copy original array of games
+    // let gameCart = [...cart];
+    // // copy targeted game item
+    // let targetGame = { ...gameCart[gameIndex] };
+    // console.log(targetGame);
+    // // update targeted game quanitity
+    // targetGame.quantity = count;
+    // console.log(targetGame);
+    // // replace updated game
+    // gameCart[gameIndex] = targetGame;
+    // setCart(gameCart);
+
     const gameIndex = cart.findIndex((game) => game.name === name);
-    let newQuantity = count + 1;
-    setCount(newQuantity);
+    // console.log('old cart:');
+    // console.log(cart);
+    // const game = cart.find((game) => game.name === name);
+    // console.log(game);
+    // game.quantity = game.quantity + 1;
+    // let newQuantity = cart[gameIndex].quanitity;
+    // console.log(`count is pradziu ${count}`);
+    // newQuantity += 1;
+    // console.log(`naujas quant turi but ${newQuantity}`);
     // copy original array of games
     let gameCart = [...cart];
     // copy targeted game item
     let targetGame = { ...gameCart[gameIndex] };
+    // console.log('Game before update');
+    // console.log(targetGame);
     // update targeted game quanitity
-    targetGame.quantity = count;
+    targetGame.quantity = targetGame.quantity + 1;
+    // console.log('grajus pries update');
+    // console.log(targetGame);
+    // update targeted game quanitity
+    // targetGame.quantity = newQuantity;
+    // console.log('grajus po update');
+    // console.log(targetGame);
     // replace updated game
     gameCart[gameIndex] = targetGame;
+    // console.log('game after update');
+    // console.log(targetGame);
+    // console.log('koks turetu but cartas');
+    // console.log(gameCart);
     setCart(gameCart);
+    // console.log('new cart is: ');
+    // console.log(cart);
   }
 
   function decrementQuantity() {
@@ -129,7 +170,7 @@ function ProductCard({ name, price, image, cart, setCart }) {
           >
             +
           </button>
-          <span>{count}</span>
+          <span>{quantity}</span>
           <button
             className='product-card__quantity__btn'
             id={name}
