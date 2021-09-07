@@ -70,7 +70,7 @@ function Cart({ cart, setCart }) {
           </div>
           <div className='order-info'>
             <div className='order-info__total-price'>
-              Total Price: {totalPrice}
+              Total Price: ${totalPrice}
             </div>
             <button className='order-info__purchase-btn' onClick={resetCart}>
               Buy
@@ -104,13 +104,12 @@ function ProductCard({ name, price, image, cart, setCart, quantity }) {
     let gameToUpdate = { ...gameCart[gameIndex] };
     // update targeted game quanitity
     gameToUpdate.quantity = gameToUpdate.quantity - 1;
-    // {
-    //   if (gameToUpdate.quantity === 0) {
-    //     gameCart = gameCart.filter((game) => game.quantity !== 0);
-    //   }
-    // }
     // replace updated game
     gameCart[gameIndex] = gameToUpdate;
+    // remove games from cart if they reach 0 quanitity
+    {
+      gameCart = gameCart.filter((game) => game.quantity > 0);
+    }
     setCart(gameCart);
   }
 
