@@ -12,7 +12,7 @@ An e-commerce web-page created with React. This project was made to practice:
 
 ### Live Demo
 
-You can visit page [here] (https://karolisgaiv.github.io/shopping-cart/).
+[You can visit page here.](https://karolisgaiv.github.io/shopping-cart/)
 
 #### Run Project Locally
 
